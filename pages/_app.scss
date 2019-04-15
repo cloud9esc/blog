@@ -1,0 +1,64 @@
+@import "../styles/reset.scss";
+@import "../styles/bootstrap-grid/bootstrap-grid.scss";
+@import "../styles/common";
+
+@font-face{
+	font-family: 'ShinhanCard-Text';
+	src: url('/static/fonts/eot/ShinhanCardText.eot');
+	src: url('/static/fonts/woff2/ShinhanCardText.woff2') format('woff2'),
+	url('/static/fonts/woff/ShinhanCardText.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face{
+	font-family: 'ShinhanCardB';
+	src: url('/static/fonts/eot/ShinhanCardB.eot');
+	src: url('/static/fonts/woff2/ShinhanCardB.woff2') format('woff2'),
+	url('/static/fonts/woff/ShinhanCardB.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face{
+	font-family: 'ShinhanCardM';
+	src: url('/static/fonts/eot/ShinhanCardM.eot');
+	src: url('/static/fonts/woff2/ShinhanCardM.woff2') format('woff2'),
+	url('/static/fonts/woff/ShinhanCardM.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face{
+	font-family: 'ShinhanCardL';
+	src: url('/static/fonts/eot/ShinhanCardL.eot');
+	src: url('/static/fonts/woff2/ShinhanCardL.woff2') format('woff2'),
+	url('/static/fonts/woff/ShinhanCardL.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+  font-family: 'ShinhanCard-Text', sans-serif;
+}
+
+body {
+  
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  word-break: keep-all;
+}
+
+.global_background {
+  background-image: url("/static/assets/background.jpg");
+  background-size: cover;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  @media all and (orientation:portrait) {
+    background-image: url("/static/assets/background-mobile.jpg")
+  }
+}
