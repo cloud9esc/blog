@@ -8,7 +8,7 @@ export default class IndexPage extends React.Component {
     return (
       <div className="IndexPage">
         <h1 className="headline">
-          Foreground One
+          1 Foreground One 1
         </h1>
       </div>
     );
