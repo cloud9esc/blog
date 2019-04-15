@@ -19,9 +19,8 @@ class MyApp extends App {
 
     return (
       <Container>
-        <div className="global_background">
-          <Component {...pageProps} />
-        </div>
+        <div className="global_background" />
+        <Component {...pageProps} />
       </Container>
     );
   }

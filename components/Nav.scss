@@ -1,0 +1,15 @@
+@import '../styles/common';
+
+.Nav {
+  .Nav__wrapper {
+    padding-top: 15px;
+  }
+  .Nav__title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  .Nav__subtitle {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}

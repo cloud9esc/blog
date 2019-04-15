@@ -1,15 +1,16 @@
 import React from 'react';
-import Link from 'next/link';
+//import Link from 'next/link';
 
 import './index.scss';
+import AppHeader from '../components/AppHeader';
+import Nav from '../components/Nav';
 
 export default class IndexPage extends React.Component {
   render() {
     return (
       <div className="IndexPage">
-        <h1 className="headline">
-          1 Foreground One 1
-        </h1>
+        <AppHeader />
+        <Nav />
       </div>
     );
   };

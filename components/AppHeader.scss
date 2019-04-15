@@ -1,0 +1,16 @@
+@import "../styles/common";
+
+.AppHeader {
+  .AppHeader__head {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+  }
+  .AppHeader__border {
+    border-top: 1px dotted $border-white;
+  }
+}
