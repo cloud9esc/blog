@@ -10,7 +10,13 @@ export default class IndexPage extends React.Component {
     return (
       <div className="IndexPage">
         <AppHeader />
-        <Nav />
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-md-3">
+              <Nav />
+            </div>
+          </div>
+        </div>
       </div>
     );
   };
