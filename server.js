@@ -11,7 +11,7 @@ app.prepare().then(() => {
   const server = express()
 
   server.get('/contents/posts/:id', async (req, res) => {
-    return res.json()
+    return res.json(await getPost(req.params.id));
   })
 
   server.get('/contents/posts', async (req, res) => {
