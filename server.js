@@ -1,28 +1,28 @@
-const { createServer } = require('http')
-const { parse } = require('url')
+const express = require('express')
 const next = require('next')
-const { loadPosts } = require('./lib/repository');
+const { loadPosts, getPost } = require('./lib/repository');
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-
 app.prepare().then(() => {
-  createServer((req, res) => {
-    const parsedUrl = parse(req.url, true)
-    const { pathname, query } = parsedUrl
+  const server = express()
 
-    if (pathname === '/contents/posts'){
-      loadPosts(query).then(data => {
-        res.write(JSON.stringify(data));
-        res.end();
-      })
-    } else {
-      handle(req, res, parsedUrl)
-    }
-  }).listen(port, err => {
+  server.get('/contents/posts/:id', async (req, res) => {
+    return res.json()
+  })
+
+  server.get('/contents/posts', async (req, res) => {
+    return res.json(await loadPosts(req.query));
+  })
+
+  server.get('*', (req, res) => {
+    return handle(req, res)
+  })
+
+  server.listen(port, err => {
     if (err) throw err
     console.log(`> Ready on http://localhost:${port}`)
   })
