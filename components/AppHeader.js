@@ -14,7 +14,15 @@ export default class AppHeader extends React.Component {
                 <a className="AppHeader__head">foreground.one</a>
               </Link>
             </div>
-            <div className="col-12 AppHeader__border"/>
+            <div className="col-12">
+              <a
+                href="https://github.com/cloud9esc"
+                className="AppHeader__links"
+              >
+                https://github.com/cloud9esc
+            </a>
+            </div>
+            {/* <div className="col-12 AppHeader__border" /> */}
           </div>
         </div>
       </div>

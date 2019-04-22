@@ -11,12 +11,18 @@ export default function Nav() {
         <li className="Nav__title">projects
                 <ul className="Nav__subtitle">
             <li>
-              <Link>
+              <Link href={{
+                pathname: '',
+                query: { category: "project-euljiro" },
+              }}>
                 <a>+ 신한카드 을지로 프로젝트</a>
               </Link>
             </li>
             <li>
-              <Link>
+              <Link href={{
+                pathname: '',
+                query: { category: "project-foregroundone" },
+              }}>
                 <a>+ foreground.one</a>
               </Link>
             </li>
