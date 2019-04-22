@@ -12,7 +12,7 @@ export default function Nav() {
                 <ul className="Nav__subtitle">
             <li>
               <Link href={{
-                pathname: '',
+                pathname: '/',
                 query: { category: "project-euljiro" },
               }}>
                 <a>+ 신한카드 을지로 프로젝트</a>
@@ -20,7 +20,7 @@ export default function Nav() {
             </li>
             <li>
               <Link href={{
-                pathname: '',
+                pathname: '/',
                 query: { category: "project-foregroundone" },
               }}>
                 <a>+ foreground.one</a>
