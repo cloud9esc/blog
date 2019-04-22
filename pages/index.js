@@ -5,6 +5,7 @@ import './index.scss';
 import AppHeader from '../components/AppHeader';
 import Nav from '../components/Nav';
 import Recents from '../components/Recents';
+import AppFooter from '../components/AppFooter';
 
 export default class IndexPage extends React.Component {
 
@@ -25,6 +26,7 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
         </div>
+        <AppFooter />
       </div>
     );
   };
