@@ -24,7 +24,7 @@ function RecentsCard({ header }) {
   return (
     <div className="RecentsCard">
       <Link href={{
-        pathname: '/contents/post',
+        pathname: '/post',
         query: { id: header.id },
       }}>
         <a className="RecentsCard__box">

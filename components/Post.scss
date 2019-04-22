@@ -1,0 +1,61 @@
+@import '../styles/common';
+
+.Post {
+  border: 3px solid $border-white;
+  padding: 20px 20px 20px 20px;
+  @include media-breakpoint-up(md) {
+    padding: 20px 40px 20px 40px;
+  }
+
+  .Post__body {
+    > * {
+      margin-bottom: 15px;
+      @include media-breakpoint-up(sm) {
+        margin-left: 70px;
+      }
+      @include media-breakpoint-up(md) {
+        margin-left: 300px;
+      }
+    }
+    h1 {
+      margin-left: 0;
+      font-size: 24px;
+      font-weight: 900;
+      font-style: italic;
+    }
+    p, ul, ol {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    ul {
+      padding-left: 15px;
+      li::before {
+        content: "*";
+        margin-right: 10px;
+      }
+    }
+    ol {
+      padding-left: 15px;
+      li {
+        counter-increment: li;
+      }
+      li::before {
+        content: counter(li)'.';
+        margin-right: 7px;
+      }
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    pre {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding-left: 15px;
+    }
+    code {
+      font-family: monospace;
+      line-height: 1.2;
+    }
+  }
+}
