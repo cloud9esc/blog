@@ -15,7 +15,7 @@ app.prepare().then(() => {
   })
 
   server.get('/contents/posts', async (req, res) => {
-    return res.json(await loadPosts(req.query));
+    return res.json(await loadPosts(req.query || {}));
   })
 
   server.get('*', (req, res) => {
