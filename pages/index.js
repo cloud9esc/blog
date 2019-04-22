@@ -9,7 +9,7 @@ import Recents from '../components/Recents';
 export default class IndexPage extends React.Component {
 
   static async getInitialProps() {
-    return { posts: await loadPosts() };
+    return { posts: await loadPosts({}) };
   }
   render() {
     return (
@@ -17,10 +17,10 @@ export default class IndexPage extends React.Component {
         <AppHeader />
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-3">
+            <div className="col-12">
               <Nav />
             </div>
-            <div className="col-12 col-md-9">
+            <div className="col-12">
               <Recents posts={this.props.posts}/>
             </div>
           </div>
