@@ -1,0 +1,39 @@
+version: "2.4"
+
+
+services:
+  frontend:
+    build: ..
+    restart: unless-stopped
+    environment:
+      PORT: 80
+      NODE_ENV: production
+      VIRTUAL_HOST: foreground.one
+      LETSENCRYPT_HOST: foreground.one
+      LETSENCRYPT_EMAIL: cloud9esc@gmail.com
+
+  proxy:
+    restart: unless-stopped
+    image: jwilder/nginx-proxy:alpine
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - cert:/etc/nginx/certs:ro
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true
+
+  letsencrypt:
+    restart: unless-stopped
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    volumes_from:
+      - proxy
+    volumes:
+      - cert:/etc/nginx/certs:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+volumes:
+  cert: # LetsEncrypt TLS 인증서
