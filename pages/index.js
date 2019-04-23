@@ -9,8 +9,10 @@ import AppFooter from '../components/AppFooter';
 
 export default class IndexPage extends React.Component {
 
-  static async getInitialProps() {
-    return { posts: await loadPosts({}) };
+  static async getInitialProps({ query }) {
+    return {
+      posts: await loadPosts({ category: query.category }),
+    };
   }
   render() {
     return (
@@ -22,7 +24,7 @@ export default class IndexPage extends React.Component {
               <Nav />
             </div>
             <div className="col-12">
-              <Recents posts={this.props.posts}/>
+              <Recents posts={this.props.posts} />
             </div>
           </div>
         </div>

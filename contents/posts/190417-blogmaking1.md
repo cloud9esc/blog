@@ -2,6 +2,7 @@
 title: '블로그를 위한 React Framework 고르기'
 categories:
 - project-foregroundone
+- projects
 date: '2019-04-17'
 intro: 'React를 사용해서 가장 간단하게 블로그를 만들 수 있는 방법을 탐색했습니다.'
 ---

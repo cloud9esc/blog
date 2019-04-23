@@ -10,7 +10,7 @@ export default function Recents({ posts }) {
       <div className="row">
         {posts.headers.map(header => {
           return (
-            <div key={header.id} className="col-12 col-md-4">
+            <div key={header.id} className="col-12 col-sm-6 col-md-4">
               <RecentsCard header={header} />
             </div>)
         })}
