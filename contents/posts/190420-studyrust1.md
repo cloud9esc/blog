@@ -7,10 +7,53 @@ date: '2019-04-20'
 intro: 'Rust의 독특한 개념인 소유권에 대해 잘 이해하기 위하여 몇 개의 예시 코드를 작성하고 컴파일해 보았습니다.'
 ---
 
-# Hi this is example 2
+# 1. 소유권은 무엇인가요?
 
-this is example 2. this is example 2. this is example 2. this is example 2. this is example 2? this is example 2.
+[러스트 공식문서 한글판: 소유권이 뭔가요?](https://rinthel.github.io/rust-lang-book-ko/ch04-01-what-is-ownership.html) <br />
+러스트에서, 메모리는 컴파일 타임에 컴파일러가 체크할 규칙들로 구성된 소유권 시스템을 통해 관리됩니다.
 
-this is example 2. this is example 2. this is example 2. this is example 2. this is example 2? this is example 2.
+## 소유권 규칙
+소유권 규칙은 다음과 같습니다.
+1. 러스트의 각각의 값은 해당값의 오너(owner)라고 불리우는 변수를 갖는다.
+2. 한번에 딱 하나의 오너만 존재할 수 있다.
+3. 오너가 스코프 밖으로 벗어나는 때, 값은 내려간다(dropped).
 
-this is example 2. this is example 2. this is example 2. this is example 2. this is example 2? this is example 2. this is example 2. this is example 2. this is example 2. this is example 2. this is example 2? this is example 2.
+변수의 스코프는: 
+~~~rs
+{                      // 1
+    let s = "hello";   // 2
+
+    // 3
+}   // 4
+~~~
+1. s는 아직 선언되지 않았기 때문에 유효하지 않습니다.
+2. s는 이제 유효해졌습니다.
+3. s를 가지고 뭔가 합니다.
+4. 이 스코프가 끝났으므로, s는 더이상 유효하지 않습니다.
+
+스코프와 변수 유효시점 간의 관계는 다른 프로그래밍 언어와 비슷합니다.
+
+
+# 2. 예제
+## 유효하지 않은 참조자
+
+~~~rs
+let s1 = String::from("Hello");
+let s2 = s1;
+
+println!("{}, world!", s1);
+~~~
+이 코드는 컴파일되지 않고 에러 메세지를 출력합니다. 
+
+s1은 String 값을 가지고, 러스트에서 String 변수는 데이터 포인터(스택)와 데이터 값(힙)이 따로 저장됩니다. 이 값을 복사하면서 s1의 값을 s2의 데이터 포인터도 가리키게 되었는데, 이 두 변수가 스코프 밖으로 벗어나게 되면 둘 다 같은 메모리를 해제하려고 합니다. 포인터가 가리키고 있는 힙 데이터는 복사되지 않기 때문입니다. 메모리를 두번 해제하는 것은 메모리 손상의 원인이 되고, 이는 보안 취약성 문제를 일으킬 가능성이 있습니다. 
+
+그래서 러스트에서는 처음 만들어진 s1을 더이상 유효하지 않다고 간주하고, s1이 스코프 밖으로 나갔을 때 아무것도 해제할 필요가 없도록 만듭니다. 즉 프린트라인 내에 호출된 s1은 더이상 유효하지 않은 변수이기 때문에 에러가 발생합니다.
+
+이런 경우에 s1은 이동되었다(moved)라고 합니다.
+
+그러므로 s1을 무효화하지 않고 복사하고 싶다면
+~~~rs
+let s1 = String::from("Hello");
+let s2 = s1.clone();
+~~~
+를 사용해야 합니다. clone은 힙 데이터까지 복사하기 때문에 데이터에 따라서는 런타임 처리 비용이 클 수도 있습니다. 
