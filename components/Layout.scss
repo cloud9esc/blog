@@ -1,0 +1,18 @@
+@import '../styles/common';
+
+.Layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .Layout__body {
+    flex-grow: 1;
+  }
+  .Layout__footer {
+    position: relative;
+    width: 100%;
+    // bottom: -70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+}

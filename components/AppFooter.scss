@@ -1,11 +1,14 @@
 @import '../styles/common';
 
-.AppFooter {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  text-align: end;
 
-  line-height: 1.2;
-  font-size: 12px;
-  font-weight: 100;
+.AppFooter {
+  width: 100%;
+  .AppFooter__wrap {
+    
+    text-align: end;
+  
+    line-height: 1.2;
+    font-size: 12px;
+    font-weight: 100;
+  }
 }

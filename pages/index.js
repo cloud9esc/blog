@@ -6,6 +6,7 @@ import AppHeader from '../components/AppHeader';
 import Nav from '../components/Nav';
 import Recents from '../components/Recents';
 import AppFooter from '../components/AppFooter';
+import Layout from '../components/Layout';
 
 export default class IndexPage extends React.Component {
 
@@ -16,20 +17,20 @@ export default class IndexPage extends React.Component {
   }
   render() {
     return (
-      <div className="IndexPage">
-        <AppHeader />
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <Nav />
-            </div>
-            <div className="col-12">
-              <Recents posts={this.props.posts} />
+      <Layout>
+        <div className="IndexPage">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <Nav />
+              </div>
+              <div className="col-12">
+                <Recents posts={this.props.posts} />
+              </div>
             </div>
           </div>
         </div>
-        <AppFooter />
-      </div>
+      </Layout>
     );
   };
 };

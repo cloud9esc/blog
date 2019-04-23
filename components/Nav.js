@@ -20,7 +20,7 @@ const navmap = [
     category: 'projects',
     children: [
       {
-        title: '신한카드 을지로 프로젝트',
+        title: '신한카드 을지로3가 프로젝트',
         category: 'project-euljiro'
       },
       {
