@@ -18,10 +18,11 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <Head>
+          <title>Foreground.one</title>
           <meta property="og:title" content="foreground.one" />
           <meta property="og:url" content="foreground.one" />
           <meta property="og:description" content="프로그래밍 기술 공부와 아카이빙을 위한 블로그입니다." />
-          <meta property="og:image" content="foreground.one/static/assets/blog-favicon/original.png" />
+          <meta property="og:image" content="https://foreground.one/static/assets/background-mobile.jpg" />
         </Head>
         <div className="IndexPage">
           <div className="container">
