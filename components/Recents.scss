@@ -9,8 +9,15 @@
     
     border: 4px solid $border-white;
     min-height: 200px;
-    //overflow: scroll;
-
+    @include media-breakpoint-down(lg) {
+      min-height: 250px;
+    }
+    @include media-breakpoint-down(md) {
+      min-height: 290px;
+    }
+    @include media-breakpoint-down(xs) {
+      min-height: 200px;
+    }
     &:hover {
       box-shadow: 0 0 13px 2px rgba(240, 240, 240, 0.2) inset;
     }
