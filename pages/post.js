@@ -20,7 +20,7 @@ export default class PostPage extends React.Component {
           <meta property="og:title" content={this.props.post.header.title} />
           <meta property="og:url" content={`foreground.one/post?id=${this.props.selectedPost}`} />
           <meta property="og:description" content={this.props.post.header.intro} />
-          <meta property="og:image" content="https://foreground.one/static/assets/background-mobile.jpg" />
+          <meta property="og:image" content="https://foreground.one/static/assets/og-image.jpg" />
         </Head>
         <div className="PostPage">
           <div className="container">
