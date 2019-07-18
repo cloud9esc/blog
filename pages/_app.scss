@@ -5,7 +5,7 @@
 
 html {
   font-family: 'Noto Serif KR', serif;
-  color: $white;
+  color: #111;
 }
 
 body {
@@ -22,12 +22,13 @@ a {
 }
 
 .global_background {
-  background-image: url("/static/assets/background.jpg");
+  //background-image: url("/static/assets/background.jpg");
+  background-color: #cdc19d;
   background-size: cover;
   position: fixed;
   height: 100vh;
   width: 100vw;
   @media all and (orientation:portrait) {
-    background-image: url("/static/assets/background-mobile.jpg")
+    //background-image: url("/static/assets/background-mobile.jpg")
   }
 }

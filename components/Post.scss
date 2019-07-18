@@ -1,7 +1,7 @@
 @import '../styles/common';
 
 .Post {
-  border: 3px solid $border-white;
+  border: 3px solid $navy;
   padding: 20px 20px 20px 20px;
   @include media-breakpoint-up(md) {
     padding: 20px 40px 20px 40px;
@@ -63,7 +63,7 @@
       width: 100%;
     }
     a {
-      color: #bb1;
+      color: $navy;
       &:hover {
         text-decoration: underline;
       }
@@ -86,7 +86,8 @@
       }
     }
     pre {
-      background-color: rgba(0, 0, 0, 0.3);
+      color: $white;
+      background-color: rgba(0, 0, 0, 0.6);
       padding-left: 15px;
       padding-top: 10px;
       padding-bottom: 20px;

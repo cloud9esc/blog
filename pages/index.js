@@ -25,6 +25,7 @@ export default class IndexPage extends React.Component {
           <meta property="og:image" content="https://foreground.one/static/assets/og-image.jpg" />
         </Head>
         <div className="IndexPage">
+          <div className="circle"/>
           <div className="container">
             <div className="row">
               <div className="col-12">
